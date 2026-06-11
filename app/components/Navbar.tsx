@@ -134,7 +134,7 @@ const Navbar = () => {
               <li><Link href="/graphs" onClick={() => setNavbarOpen(false)} className={getLinkClass("/graphs")}>Medical Data</Link></li>
               <li><Link href="/dating-calendar" onClick={() => setNavbarOpen(false)} className={getLinkClass("/dating-calendar")}>Dating Calendar</Link></li>
               <li className="text-gray-500 text-xs bg-zinc-900 border border-zinc-800 px-3 py-1.5 rounded select-none text-center w-full max-w-xs">
-                🤷‍♂️ Dev here, not a doctor
+                 🤷‍♂️ I don't know what to put here, i'm a developer, not a doctor
               </li>
               <li className="w-full max-w-xs pt-2">
                 <button 
