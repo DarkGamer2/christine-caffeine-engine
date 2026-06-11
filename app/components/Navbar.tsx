@@ -86,7 +86,7 @@ const Navbar = () => {
               <li><Link href="/graphs" className={getLinkClass("/graphs")}>Medical Data</Link></li>
               <li><Link href="/dating-calendar" className={getLinkClass("/dating-calendar")}>Dating Calendar</Link></li>
               <li className="text-gray-500 text-xs bg-zinc-900 border border-zinc-800 px-2 py-1 rounded select-none whitespace-nowrap">
-                🤷‍♂️ Dev here, not a doctor
+                🤷‍♂️ I don't know what to put here, i'm a developer, not a doctor
               </li>
             </ul>
           </div>
