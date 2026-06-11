@@ -6,7 +6,7 @@
 }
 
 @theme inline {
-  --color-background: var(--background);
+ 
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
@@ -20,7 +20,103 @@
 }
 
 body {
-  background: var(--background);
+ 
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ==========================================================================
+   Christine's Caffeine Engine - Dark Mode Calendar Overrides
+   ========================================================================== */
+
+/* 1. Main Calendar Base Frame */
+.react-calendar {
+  background-color: transparent !important;
+  border: 1px solid #27272a !important; /* zinc-800 */
+  border-radius: 1rem !important;
+  color: #f4f4f5 !important; /* zinc-100 */
+  font-family: inherit !important;
+  width: 100% !important;
+  max-width: 450px !important;
+}
+
+/* 2. Month Navigation Header (e.g., "December 2026") */
+.react-calendar__navigation {
+  background: transparent !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.react-calendar__navigation button {
+  color: #db2777 !important; /* pink-600 */
+  min-width: 44px !important;
+  background: transparent !important;
+  font-weight: bold !important;
+  font-size: 1rem !important;
+}
+
+.react-calendar__navigation button:enabled:hover,
+.react-calendar__navigation button:enabled:focus {
+  background-color: rgba(219, 39, 119, 0.1) !important; /* Subtle pink glow */
+  border-radius: 0.5rem !important;
+}
+
+/* 3. Weekday Labels (Sun, Mon, Tue...) */
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  font-size: 0.75rem !important;
+  color: #71717a !important; /* zinc-500 */
+}
+
+/* 4. Individual Date Grid Tiles */
+.react-calendar__tile {
+  color: #e4e4e7 !important; /* zinc-200 */
+  background: transparent !important;
+  padding: 0.75rem 0.5rem !important;
+  transition: all 200ms ease !important;
+}
+
+/* Hovering over normal days */
+.react-calendar__tile:enabled:hover,
+.react-calendar__tile:enabled:focus {
+  background-color: rgba(219, 39, 119, 0.15) !important;
+  color: #f472b6 !important; /* pink-400 */
+  border-radius: 9999px !important;
+}
+
+/* 5. Handle Neighboring Month Days (Grey out days from last/next month) */
+.react-calendar__month-view__days__day--neighboringMonth {
+  color: #3f3f46 !important; /* zinc-700 */
+}
+
+/* 6. Current "Today" Highlight (Keep it subtle so it doesn't fight your selection) */
+.react-calendar__tile--now {
+  background-color: rgba(63, 63, 70, 0.4) !important; /* Zinc-700 opacity */
+  border-radius: 9999px !important;
+  font-weight: bold !important;
+}
+
+/* 7. Override active library selection states (The default yellow/blue) */
+.react-calendar__tile--active {
+  background: transparent !important;
+  color: #e4e4e7 !important;
+}
+
+/* Fixes native browser date inputs inside custom calendar wrapper contexts */
+input[type="date"] {
+    position: relative;
+}
+
+/* Brightens and targets the browser's calendar dropdown trigger widget */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-color: transparent !important;
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(290deg) !important; /* Forces arrow to render in sharp neon pink */
+    cursor: pointer !important;
+    position: absolute !important;
+    right: 12px !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    width: 20px !important;
+    height: 20px !important;
+    z-index: 20 !important;
 }
