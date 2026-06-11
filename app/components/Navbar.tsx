@@ -61,9 +61,9 @@ const Navbar = () => {
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               <Link href="/" className="flex items-center gap-2">
                 <Image src={MedLogo} alt="Medical Logo" className="w-4 h-10 object-contain" />
-                <span className={`${lobster.className} text-pink-500 text-xl hidden sm:inline`}>
+                {/* <span className={`${lobster.className} text-pink-500 text-xl hidden sm:inline`}>
                   MedDev Inc.
-                </span>
+                </span> */}
               </Link>
               
               {/* Hamburger Button: Visible on Mobile, Hidden on iPad/Laptop (md and up) */}
